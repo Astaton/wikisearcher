@@ -1,0 +1,14 @@
+{
+  "name": "wikisearcher",
+  "version": "1.0.0",
+  "description": "utlilizes wikipedia API to search wikipedia and render search results",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "AAron Staton",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
