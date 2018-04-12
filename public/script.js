@@ -10,6 +10,13 @@ $(document).ready(function(){
     "<div id='searchResultsWrapper'>"+results+"</div>"
     );
  }
+
+ function renderNoResultsFound(data){
+
+    $('#searchResultsWrapper').replaceWith(
+      "<div id='searchResultsWrapper'><div class='searchResults searchResultsInactive'><p> No results found for: <b>"+data[0]+"</b></p></div></div>"
+    );
+ }
   
   function shiftSearchBox(){
     $(".searchContainer").removeClass('searchContainerInactive');
@@ -38,7 +45,12 @@ $(document).ready(function(){
       if(margin >= 129){
       shiftSearchBox();
       }
-      renderResults(data);
+      if(data[1].length > 0 || data[2].length > 0 || data[3].length > 0){
+        renderResults(data);
+      }else{
+        renderNoResultsFound(data);
+      }
+      
       var delay = 10;
       //transition would not work with out fadeIn being delayed
       fadeDelay = setInterval(function(){
@@ -48,6 +60,9 @@ $(document).ready(function(){
         }
         delay--;
       }, 20);
+    },
+    error: function(error){
+      console.log(error);
     }
 
    });
@@ -62,7 +77,7 @@ $(document).ready(function(){
 
   $("input").on("keydown",function(e) {
     var search =$('#searchBar').val();
-    if(e.keyCode == 13) {
+    if(e.keyCode === 13) {
       e.preventDefault();
       $("#searchResultsWrapper").removeClass('searchResultsActive');
       $("#searchResultsWrapper").addClass('searchResultsInactive'); 
