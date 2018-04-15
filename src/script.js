@@ -1,8 +1,11 @@
+import $ from 'jquery';
+import './style.css';
+
 $(document).ready(function(){
 
   function renderResults(data){
     var results ="";
-    for(i=0; i<data[1].length; i++){
+    for(var i=0; i<data[1].length; i++){
       results += " <a href="+data[3][i]+" target='blank' class='link'><div class='searchResults searchResultsInactive'><p><b>"+data[1][i]+"</b></p><p>"+data[2][i]+"</p></div></a> " 
     }
 
