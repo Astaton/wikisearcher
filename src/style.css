@@ -1,8 +1,9 @@
 body{
-/*background-image: url(https://www.xmple.com/wallpaper/gradient-white-linear-grey-1920x1080-c2-696969-f8f8ff-a-90-f-14.svg);
+  background: #b8b8bc;
+  background: linear-gradient(#6a6a6a, #eaeaf1);
   background-size: cover;
   background-repeat: no-repeat;
-  background-attachment: fixed;*/
+  background-attachment: fixed;
   font-size: 16px;
 }
 
